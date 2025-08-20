@@ -1,0 +1,351 @@
+body {
+    background: rgb(255, 247, 225);
+    color: rgb(73, 110, 131); 
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout containers */
+.row-container {
+    display: flex;
+    justify-content: center; /* keeps all 3 sections centered */
+    align-items: center;
+}
+
+.col-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers the images */
+}
+.our-mission {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.our-mission p {
+    margin-right: 100px;
+}
+
+/* Nav Bar */
+
+.nav {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: rgb(73, 110, 131);
+    margin-bottom: 20px;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgb(68, 68, 68);
+    display: flex;
+    justify-content: space-between;
+} 
+  
+.nav a{
+    float: left;
+    display: block;
+    color: rgb(255, 247, 225);
+    text-align: center;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 24px;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.nav-right a:hover {
+    color: black;
+}
+.nav-text {
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(255, 247, 225);
+    text-align: center;
+    margin-left: 60px;
+    font-size: 24px;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+}
+
+
+
+
+/* Logo + overlay text */
+.logo {
+    width: 800px; /* smaller so it doesnâ€™t dominate */
+    height: auto;
+    margin: 50px;
+}
+
+.centered {
+    position: absolute;
+    text-align: center;
+    color: rgb(73, 110, 131); /* make text visible over logo */
+}
+
+/* Side images */
+.sideimg {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* prevents distortion */
+    border-radius: 10px;
+}
+
+.left-img {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 60px;
+    margin-right: 100px;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.pvsa-img {
+    height: auto;
+    width: 1200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Calendar */
+.calendar-container {
+    max-width: 900px;   /* optional, keeps it from stretching too wide */
+    margin: 0 auto;
+    border: solid 1px #777;
+    background: #fff;
+}
+
+/* Both iframe versions fill their container */
+.calendar-desktop, .calendar-mobile {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* Show desktop calendar on wider screens */
+@media (min-width: 768px) {
+    .calendar-mobile { display: none; }
+}
+
+/* Show agenda view on mobile */
+@media (max-width: 767px) {
+    .calendar-desktop { display: none; }
+    .calendar-mobile { height: 500px; } /* shorter for list view */
+}
+
+
+/* Text styling */
+.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 120px;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+.text {
+    font-family: 'Times New Roman', serif;
+    font-size: 36px;
+    color: rgb(73, 110, 131);
+    margin: 0;
+}
+
+.subtext {
+    /* font-family: 'Comic Sans MS', sans-serif; */
+    font-family: 'Arial Black', sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+}
+.subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 80px;
+    margin: 5px 0;
+    text-align: center;
+}
+.list {
+    font-family: 'Times New Roman', sans-serif;
+    line-height: 1;
+    font-size: 36px;
+    color:rgb(73, 110, 131);
+    margin: 0;
+}
+.subheading {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin: 30px 0px 5px;
+}
+
+.text, .list {
+    max-width: 75ch; /* readable line length */
+  }
+
+.section-lg {
+    padding-block: 64px;
+}
+.section-md {
+    padding-block: 36px;
+}
+
+.section-sm {
+    padding-block: 24px;
+}
+
+
+/* --- RESPONSIVE FIXES --- */
+
+
+
+@media (max-width: 1024px) {
+    /* 1. Hide side images near the top */
+    .sideimg {
+        display: none;
+}
+    .left-img {
+        justify-content: center;
+        margin: 0px;
+
+    }
+
+    /* 2. Make PVSA image scale */
+.pvsa-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+}
+.pvsa-text {
+    margin: 20px;
+}
+
+    /* Optional: make logo smaller for mobile */
+.logo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+}
+/* Stack containers vertically */
+.row-container {
+    flex-direction: column;
+    text-align: center;
+}
+.our-mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.our-mission p {
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+}
+/* Adjust text sizes for better fit */
+.title {
+    font-size: 90px;
+}
+
+.subtitle {
+    font-size: 60px;
+}
+
+.text, .list, .subheading {
+    font-size: 30px;
+}
+.section-lg {
+    padding-block: 32px;
+}
+.section-md {
+    padding-block: 18px;
+}
+.section-sm {
+    padding-block: 12px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Hide side images near the top */
+    .sideimg {
+        display: none;
+}
+
+
+    /* 2. Make PVSA image scale */
+.pvsa-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+}
+
+    /* Optional: make logo smaller for mobile */
+.logo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+}
+/* Stack containers vertically */
+.row-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Adjust text sizes for better fit */
+.title {
+    font-size: 60px;
+}
+
+.subtitle {
+    font-size: 40px;
+}
+
+.text, .list, .subheading {
+    font-size: 20px;
+}
+.nav {
+    flex-wrap: wrap; /* allow text to break into new line */
+    padding: 10px;    /* add breathing room */
+}
+
+.nav-text {
+    margin-left: 0;
+    width: 100%;      /* logo text spans full width on top */
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.nav-right {
+    width: 100%;      /* links span the full width below */
+    justify-content: center;
+    margin: 0px;
+    flex-wrap: wrap;  /* let links go to multiple lines */
+}
+
+.nav a {
+    font-size: 18px;  /* slightly smaller text to fit */
+    padding: 8px;     /* more compact padding */
+}
+}
+
+
+/* Optional: For very small devices */
+@media (max-width: 480px) {
+    .title {
+        font-size: 48px;
+    }
+}
+
